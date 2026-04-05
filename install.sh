@@ -106,6 +106,7 @@ eval "$(/usr/local/bin/brew shellenv)"
 #-------------------------------------------------------------------------------
 # Install packages
 #-------------------------------------------------------------------------------
+export HOMEBREW_NO_ENV_HINTS=1
 
 echo "🔧 Updating package list..."
 brew update
@@ -116,6 +117,7 @@ brew upgrade
 install_if_missing gcc
 install_if_missing make
 install_if_missing nano
+install_if_missing wget
 install_if_missing neovim
 install_if_missing python
 install_if_missing npm
