@@ -127,8 +127,9 @@ install_if_missing automake
 install_if_missing autoconf-archive
 install_if_missing pkg-config
 install_if_missing libtool
-install_if_missing texlive
+install_if_missing dockutil
 install_if_missing ripgrep
+install_if_missing texlive
 
 # Update profile to find make
 MAKE_PREFIX="$(brew --prefix make 2>/dev/null)"
@@ -252,9 +253,12 @@ else
     unzip -q iterm2.zip
 
     mv iTerm.app /Applications/
+    mkdir -p "$HOME"/"Library/Application Support/iTerm2/DynamicProfiles"
     cp HPC0.json "$HOME"/"Library/Application Support/iTerm2/DynamicProfiles"
     GUID="46D020C0-F234-4847-ACBF-BA562CE44F7A"
     defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "$GUID"
+    dockutil --add /Applications/iTerm.app
+    cp nerdfonts/* /Library/Fonts
 
     echo "iTerm2 installed."
 fi

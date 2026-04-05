@@ -76,7 +76,48 @@
   },
   "Cursor Type" : 2,
   "Keyboard Map" : {
-
+    "0x6c-0x180000-0x25" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 19,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x6a-0x180000-0x26" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 21,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x6b-0x180000-0x28" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 20,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x68-0x180000-0x4" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 18,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x68-0x100000-0x4" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 2,
+      "Text" : "",
+      "Escaping" : 2
+    },
+    "0x6c-0x100000-0x25" : {
+      "Version" : 2,
+      "Apply Mode" : 0,
+      "Action" : 0,
+      "Text" : "",
+      "Escaping" : 2
+    }
   },
   "Ansi 3 Color (Dark)" : {
     "Green Component" : 0.73333334922790527,
@@ -298,6 +339,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.35333043336868286
   },
+  "Dynamic Profile Filename" : "\/Users\/lehn\/Library\/Application Support\/iTerm2\/DynamicProfiles\/HPC0.json",
   "Description" : "Default",
   "Ansi 7 Color (Dark)" : {
     "Green Component" : 0.73333334922790527,
@@ -430,7 +472,7 @@
   "Shortcut" : "",
   "Mouse Reporting" : true,
   "Tags" : [
-
+    "Dynamic"
   ],
   "Cursor Boost (Light)" : 0,
   "Use Tab Color (Light)" : false,
