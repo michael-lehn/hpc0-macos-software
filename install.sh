@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 install_if_missing() {
     if ! brew list "$1" >/dev/null 2>&1; then
         echo "📦 Installing $1..."
