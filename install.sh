@@ -236,3 +236,25 @@ ulm-generator --fetch ulm-ice40.isa
 ulm-generator --install ulm-ice40.isa
 echo "10100020202100001402000004000004302000001211000105FFFFFB0141000068656C6C6F2C20776F726C64210A00" > hello
 ulm hello
+
+#-------------------------------------------------------------------------------
+# Install and configure iterm2
+#-------------------------------------------------------------------------------
+
+APP="/Applications/iTerm.app"
+
+if [ -d "$APP" ]; then
+    echo "iTerm2 already installed. Skipping installation."
+else
+    echo "Installing iTerm2..."
+
+    curl -L -o iterm2.zip https://iterm2.com/downloads/stable/latest
+    unzip -q iterm2.zip
+
+    mv iTerm.app /Applications/
+    cp HPC0.json "$HOME"/"Library/Application Support/iTerm2/DynamicProfiles"
+    GUID="46D020C0-F234-4847-ACBF-BA562CE44F7A"
+    defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "$GUID"
+
+    echo "iTerm2 installed."
+fi
