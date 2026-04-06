@@ -31,7 +31,8 @@ brew install git && ( [ -d hpc0-macos/.git ] && cd hpc0-macos && git pull && ./i
 
 This script installs the main software and tools used in the HPC0 course:
 
-- `git`, GNU `make`, and the GNU C/C++ compiler
+- `git`, GNU `make`, the GNU C/C++ compiler, and the LLVM toolchain (including
+  libraries)
 - The ABC compiler and the ULM generator
 - `iTerm2` (unless it's already installed), which I consider the best terminal emulator on macOS
 
