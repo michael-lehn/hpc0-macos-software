@@ -31,8 +31,7 @@ brew install git && ( [ -d hpc0-macos/.git ] && cd hpc0-macos && git pull && ./i
 
 This script installs the main software and tools used in the HPC0 course:
 
-- `git`, GNU `make`, the GNU C/C++ compiler, and the LLVM toolchain (including
-  libraries)
+- `git`, GNU `make`, the GNU C/C++ compiler, and the LLVM toolchain (including libraries)
 - The ABC compiler and the ULM generator
 - `iTerm2` (unless it's already installed), which I consider the best terminal emulator on macOS
 
@@ -43,17 +42,13 @@ changes are given below. For now, here is what is modified:
 - `ls` is aliased to `eza` to provide a more colorful and informative output
 - `make` is aliased to `gmake`
 - `vim` is aliased to `nvim` (Neovim), as I consider it the better Vim
-- `nvim` is installed along with my configuration and a set of plugins I find useful  
-  (your existing Neovim configuration will not be overwritten; a backup is created)
+- `nvim` is installed along with my configuration and a set of plugins I find useful  (your existing Neovim configuration will not be overwritten; a backup is created)
 - Nerd Fonts are installed so that file icons and symbols display correctly in Neovim
 
 ### If you do not like these changes
 
-- All modifications to `~/.bash_profile` are marked with the comment `HPC0`  
-  → you can remove these lines at any time
-- If you want to restore your previous Neovim configuration:  
-  a backup has been created in `~/.config` with a name like  
-  `nvim.bak<unique-id>`
+- All modifications to `~/.bash_profile` are marked with the comment `HPC0`  → you can remove these lines at any time
+- If you want to restore your previous Neovim configuration:  a backup has been created in `~/.config` with a name like  `nvim.bak<unique-id>`
 
 ## Usage (for those who want to know what is happening)
 
