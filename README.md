@@ -26,3 +26,27 @@ Open a terminal, copy the following line, paste it into the terminal, and press 
 ```bash
 brew install git && ( [ -d hpc0-macos/.git ] && cd hpc0-macos && git pull && ./install.sh || git clone https://github.com/michael-lehn/hpc0-macos-software.git && cd hpc0-macos && ./install.sh)
 ```
+
+## Usage (for those who want to know what is happening)
+
+### First time
+From your home directory (or wherever you want), clone the repository, change
+into it, run `./install`, and source `~/.bash_profile`:
+
+```
+git clone https://github.com/michael-lehn/hpc0-ubuntu-software.git
+cd hpc0-ubuntu-software
+./install
+source ~/.bash_profile
+```
+
+### If you have already cloned the repository before
+Change into the repository, pull the latest changes, run `./install` again,
+and source `~/.bash_profile`:
+
+```
+cd hpc0-ubuntu-software
+git pull
+./install
+source ~/.bash_profile
+```

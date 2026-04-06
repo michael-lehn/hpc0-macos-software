@@ -115,6 +115,7 @@ brew update
 echo "🔧 Upgrading packages..."
 brew upgrade
 
+install_if_missing eza
 install_if_missing gcc
 install_if_missing make
 install_if_missing nano
@@ -174,6 +175,8 @@ clone_or_pull $git_repos
 NVIM_DIR="$(clone_or_pull_target_dir $git_repos)"
 safe_symlink "$NVIM_DIR" "$HOME/.config/nvim"
 add_to_file "alias vim=nvim" "$PROFILE"
+add_to_file "alias vim=nvim" "$PROFILE"
+add_to_file "alias ls=eza" "$PROFILE"
 
 #-------------------------------------------------------------------------------
 # Configure nano
