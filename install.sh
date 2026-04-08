@@ -134,6 +134,7 @@ install_if_missing libtool
 install_if_missing dockutil
 install_if_missing ripgrep
 install_if_missing texlive
+install_if_missing nvr
 
 # Update profile to find make
 MAKE_PREFIX="$(brew --prefix make 2>/dev/null)"
@@ -177,6 +178,7 @@ safe_symlink "$NVIM_DIR" "$HOME/.config/nvim"
 add_to_file "alias vim=nvim" "$PROFILE"
 add_to_file "alias vim=nvim" "$PROFILE"
 add_to_file "alias ls=eza" "$PROFILE"
+add_to_file "alias texvim='SOCKET=/tmp/nvim; rm -f $SOCKET; nvim --listen \$SOCKET'" "$PROFILE"
 
 #-------------------------------------------------------------------------------
 # Configure nano
@@ -267,4 +269,17 @@ else
     cp nerdfonts/* /Library/Fonts
 
     echo "iTerm2 installed."
+fi
+
+#-------------------------------------------------------------------------------
+# Install skim
+#-------------------------------------------------------------------------------
+
+APP="/Applications/Skim.app"
+
+if [ -d "$APP" ]; then
+    echo "Skim already installed. Skipping installation."
+else
+    echo "Installing Skim..."
+    brew install skim --cask
 fi
