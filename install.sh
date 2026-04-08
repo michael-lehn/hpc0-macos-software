@@ -178,7 +178,7 @@ safe_symlink "$NVIM_DIR" "$HOME/.config/nvim"
 add_to_file "alias vim=nvim" "$PROFILE"
 add_to_file "alias vim=nvim" "$PROFILE"
 add_to_file "alias ls=eza" "$PROFILE"
-add_to_file "alias texvim='SOCKET=/tmp/nvim; rm -f $SOCKET; nvim --listen \$SOCKET'" "$PROFILE"
+add_to_file "alias texvim='SOCKET=/tmp/nvim; rm -f \$SOCKET; nvim --listen \$SOCKET'" "$PROFILE"
 
 #-------------------------------------------------------------------------------
 # Configure nano
