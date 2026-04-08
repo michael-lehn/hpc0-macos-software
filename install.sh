@@ -282,4 +282,10 @@ if [ -d "$APP" ]; then
 else
     echo "Installing Skim..."
     brew install skim --cask
+    defaults write net.sourceforge.skim-app.skim \
+        SKTeXEditorCommand -string "nvr"
+    defaults write net.sourceforge.skim-app.skim \
+        SKTeXEditorArguments -string "--servername /tmp/nvim --remote +\"%line\" \"%file\""
+    defaults write net.sourceforge.skim-app.skim \
+        SKTeXEditorPreset -int 3
 fi
