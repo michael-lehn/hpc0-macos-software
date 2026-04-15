@@ -216,7 +216,7 @@ echo "📦 Building and installing abc compiler"
 git_repos=https://github.com/michael-lehn/abc-llvm.git
 clone_or_pull $git_repos
 ABC_DIR="$(clone_or_pull_target_dir $git_repos)"
-(cd "$ABC_DIR" && make && make install)
+(cd "$ABC_DIR" && make && sudo make install)
 
 #-------------------------------------------------------------------------------
 # Build finalcut
@@ -228,7 +228,7 @@ clone_or_pull $git_repos
 FC_DIR="$(clone_or_pull_target_dir $git_repos)"
 (cd "$FC_DIR" && autoreconf --install --force; \
     autoreconf --install --force \
-    && ./configure --prefix=/usr/local && make && make install)
+    && ./configure --prefix=/usr/local && make && sudo make install)
 
 
 #-------------------------------------------------------------------------------
@@ -239,10 +239,10 @@ echo "📦 Building and testing ULM generator"
 git_repos=https://github.com/michael-lehn/ulm-generator.git
 clone_or_pull $git_repos
 UG_DIR="$(clone_or_pull_target_dir $git_repos)"
-(cd "$UG_DIR" && make install)
+(cd "$UG_DIR" && sudo make install)
 
 ulm-generator --fetch ulm-ice40.isa
-ulm-generator --install ulm-ice40.isa
+sudo ulm-generator --install ulm-ice40.isa
 echo "10100020202100001402000004000004302000001211000105FFFFFB0141000068656C6C6F2C20776F726C64210A00" > hello
 ulm hello
 
@@ -289,3 +289,21 @@ else
     defaults write net.sourceforge.skim-app.skim \
         SKTeXEditorPreset -int 3
 fi
+
+#-------------------------------------------------------------------------------
+# Install stuff for FPGA development
+#-------------------------------------------------------------------------------
+
+install_if_missing sv2v
+install_if_missing yosys
+install_if_missing icestorm
+install_if_missing nextpnr-ice40
+install_if_missing netlistsvg
+install_if_missing librsvg
+install_if_missing verilator
+
+#-------------------------------------------------------------------------------
+# Install stuff for Microcontroller
+#-------------------------------------------------------------------------------
+install_if_missing arduino-cli
+install_if_missing avrdude
